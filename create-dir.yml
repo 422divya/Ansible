@@ -1,0 +1,12 @@
+---
+- name: Creating the directory
+  hosts: all
+  become: yes
+  tasks:
+    - name: Task to create directory /tmp/new_directory
+      file:
+        path: '{{ item }}'
+        state: directory
+      loop:
+        - /tmp/new_directory
+        - /tmp/test

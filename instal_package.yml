@@ -1,0 +1,14 @@
+---
+- name: Package installation and file creation
+  hosts: all
+  become: yes
+  tasks:
+    - name: Installing zlib package
+      yum:
+        name: zlib
+        state: latest
+
+    - name: Creating file
+      file:
+        name: /tmp/some_file
+        state: touch

@@ -1,0 +1,10 @@
+---
+- name: Update all packages
+  hosts: 35.78.99.61
+  become: yes
+  tasks:
+    - name: Patching server
+      yum:
+        name: "*"
+        state: latest
+

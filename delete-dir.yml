@@ -1,0 +1,13 @@
+---
+- name: Task to delete directory
+  hosts: all
+  become: yes
+  tasks:
+    - name: Deleting directory
+      file:
+        name: '{{ item }}'
+        state: absent
+
+      loop:
+        - /tmp/new_directory
+        - /tmp/test
