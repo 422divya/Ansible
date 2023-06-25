@@ -1,0 +1,10 @@
+---
+- name: To create new user
+  hosts: test
+  become: true
+  tasks:
+    - name: creating new user
+      user:
+        name: divya
+        comment: Divya prabhu
+        shell: /bin/bash

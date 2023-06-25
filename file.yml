@@ -1,0 +1,10 @@
+---
+- name: To create files on remote instance
+  hosts: test
+  become: true
+  tasks:
+     - name: Creating files
+       file:
+         path: /tmp/test.txt
+         state: touch
+         
